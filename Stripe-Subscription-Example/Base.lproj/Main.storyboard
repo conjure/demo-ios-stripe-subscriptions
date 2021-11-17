@@ -25,11 +25,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-qN-Zks">
-                                <rect key="frame" x="148.5" y="164" width="117" height="30"/>
+                                <rect key="frame" x="172.5" y="164" width="69" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Create Customer"/>
+                                <state key="normal" title="Fetch Info"/>
                                 <connections>
-                                    <action selector="createCustomer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nqg-aa-jSe"/>
+                                    <action selector="fetchPaymentInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gr6-Rk-ugG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVR-yv-Wq1">
@@ -55,7 +55,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="createCustomerButton" destination="zUv-qN-Zks" id="Ox7-ov-kam"/>
+                        <outlet property="fetchPaymentInfoButton" destination="zUv-qN-Zks" id="Ox7-ov-kam"/>
                         <outlet property="statusTextView" destination="d24-nj-qQY" id="bWU-zX-k4w"/>
                         <outlet property="subscribeButton" destination="IVR-yv-Wq1" id="2Ww-YO-qzh"/>
                     </connections>
