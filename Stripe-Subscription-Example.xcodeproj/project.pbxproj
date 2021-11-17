@@ -13,6 +13,7 @@
 		A35FD8ED27455C0500662235 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35FD8EB27455C0500662235 /* Main.storyboard */; };
 		A35FD8EF27455C0800662235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35FD8EE27455C0800662235 /* Assets.xcassets */; };
 		A35FD8F227455C0800662235 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35FD8F027455C0800662235 /* LaunchScreen.storyboard */; };
+		A35FD8FB27455CB000662235 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = A35FD8FA27455CB000662235 /* Stripe */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35FD8FB27455CB000662235 /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "Stripe-Subscription-Example";
+			packageProductDependencies = (
+				A35FD8FA27455CB000662235 /* Stripe */,
+			);
 			productName = "Stripe-Subscription-Example";
 			productReference = A35FD8E227455C0500662235 /* Stripe-Subscription-Example.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = A35FD8D927455C0500662235;
+			packageReferences = (
+				A35FD8F927455CB000662235 /* XCRemoteSwiftPackageReference "stripe-ios" */,
+			);
 			productRefGroup = A35FD8E327455C0500662235 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A35FD8F927455CB000662235 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A35FD8FA27455CB000662235 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A35FD8F927455CB000662235 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A35FD8DA27455C0500662235 /* Project object */;
 }
