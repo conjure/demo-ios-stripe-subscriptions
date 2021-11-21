@@ -64,6 +64,7 @@
 				A35FD8E727455C0500662235 /* SceneDelegate.swift */,
 				A35FD8E927455C0500662235 /* ViewController.swift */,
 				A35FD8FC27455CF200662235 /* Constants.swift */,
+				A35FD8F327455C0800662235 /* Info.plist */,
 				A35FD8FE2745747400662235 /* Resources */,
 			);
 			path = "Stripe-Subscription-Example";
@@ -72,7 +73,6 @@
 		A35FD8FE2745747400662235 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A35FD8F327455C0800662235 /* Info.plist */,
 				A35FD8EB27455C0500662235 /* Main.storyboard */,
 				A35FD8F027455C0800662235 /* LaunchScreen.storyboard */,
 				A35FD8EE27455C0800662235 /* Assets.xcassets */,

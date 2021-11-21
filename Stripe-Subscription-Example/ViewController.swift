@@ -9,21 +9,33 @@ import UIKit
 import Stripe
 
 class ViewController: UIViewController {
-    @IBOutlet private var fetchPaymentInfoButton: UIButton!
+    @IBOutlet private var fetchPaymentIntentButton: UIButton!
     @IBOutlet private var subscribeButton: UIButton!
     @IBOutlet private var statusTextView: UITextView!
     
+    private var spinnerView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     private var paymentIntentClientSecret: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchPaymentInfoButton.isHidden = false
+        fetchPaymentIntentButton.isHidden = false
         subscribeButton.isHidden = true
+        
+        spinnerView.hidesWhenStopped = true
+        spinnerView.color = UIColor.black.withAlphaComponent(0.7)
+        view.addSubview(spinnerView)
     }
     
-    @IBAction private func fetchPaymentInfo(_ sender: Any) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        spinnerView.center = view.center
+    }
+    
+    @IBAction private func fetchPaymentIntent(_ sender: Any) {
         guard let url = URL(string: Constants.backendUrl)?.appendingPathComponent("/subscribe") else { return }
+        
+        self.showSpinner()
         
         let body: [String: Any] = [
             "email": "testUser@example.com",
@@ -36,6 +48,7 @@ class ViewController: UIViewController {
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
+            self?.hideSpinner()
             guard
                 let response = response as? HTTPURLResponse,
                 response.statusCode == 200,
@@ -50,7 +63,7 @@ class ViewController: UIViewController {
             }
             
             DispatchQueue.main.async {
-                self?.fetchPaymentInfoButton.isHidden = true
+                self?.fetchPaymentIntentButton.isHidden = true
                 self?.subscribeButton.isHidden = false
                 
                 let message = "Customer \(customer) has been created"
@@ -64,13 +77,12 @@ class ViewController: UIViewController {
         task.resume()
     }
     
-    @IBAction private func subscribe(_ sender: Any) {
+    @IBAction private func pay(_ sender: Any) {
         guard let paymentIntentClientSecret = self.paymentIntentClientSecret else {
             return
         }
         
         var configuration = PaymentSheet.Configuration()
-        configuration.merchantDisplayName = "Example Co."
         configuration.allowsDelayedPaymentMethods = true
         
         let paymentSheet = PaymentSheet(
@@ -89,6 +101,16 @@ class ViewController: UIViewController {
         }
     }
     
+    private func showSpinner() {
+        DispatchQueue.main.async {
+            self.spinnerView.startAnimating()
+        }
+    }
     
+    private func hideSpinner() {
+        DispatchQueue.main.async {
+            self.spinnerView.stopAnimating()
+        }
+    }
 }
 

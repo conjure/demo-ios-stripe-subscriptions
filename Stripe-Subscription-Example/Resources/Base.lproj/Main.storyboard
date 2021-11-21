@@ -19,25 +19,24 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d24-nj-qQY">
                                 <rect key="frame" x="0.0" y="453" width="414" height="409"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-qN-Zks">
-                                <rect key="frame" x="172.5" y="164" width="69" height="30"/>
+                                <rect key="frame" x="134" y="164" width="146" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Fetch Info"/>
+                                <state key="normal" title="Fetch Payment Intent"/>
                                 <connections>
-                                    <action selector="fetchPaymentInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gr6-Rk-ugG"/>
+                                    <action selector="fetchPaymentIntent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="weo-an-H3W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVR-yv-Wq1">
-                                <rect key="frame" x="172.5" y="214" width="69" height="30"/>
+                                <rect key="frame" x="192" y="214" width="30" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Subscribe"/>
+                                <state key="normal" title="Pay"/>
                                 <connections>
-                                    <action selector="subscribe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0My-Rb-Ej0"/>
+                                    <action selector="pay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dG-qY-M7l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,7 +54,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fetchPaymentInfoButton" destination="zUv-qN-Zks" id="Ox7-ov-kam"/>
+                        <outlet property="fetchPaymentIntentButton" destination="zUv-qN-Zks" id="Ox7-ov-kam"/>
                         <outlet property="statusTextView" destination="d24-nj-qQY" id="bWU-zX-k4w"/>
                         <outlet property="subscribeButton" destination="IVR-yv-Wq1" id="2Ww-YO-qzh"/>
                     </connections>
