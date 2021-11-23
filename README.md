@@ -3,7 +3,7 @@ This example app demonstrates how to integrate Stripe subscriptions with the pre
 
 ## Requirements
 - Create an account with [Stripe](https://dashboard.stripe.com/register)
-- Set up a server to run the backend code. Code used for this sample can be found [here](https://glitch.com/edit/#!/pickled-rural-watcher)
+- Set up a server to run the backend code. Code used for this sample can be found in `server.js`
 - iOS 14.0+
 - Xcode 13.0+
 
