@@ -1,5 +1,5 @@
 # Stripe Subscriptions with iOS
-This example app demonstrates how to integrate Stripe subscriptions with the prebuilt payment UI
+This example app demonstrates how to integrate Stripe subscriptions with the prebuilt payment UI. The code used accompanies the article found [here](https://insight.conjure.co.uk/subscriptions-with-stripe-2cd725940ede)
 
 ## Requirements
 - Create an account with [Stripe](https://dashboard.stripe.com/register)
